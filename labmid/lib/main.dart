@@ -20,12 +20,12 @@ class _LabMidAppState extends State<LabMidApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'User Task Manager',
+      title: 'Remote work App(lab mid)',
       home: DefaultTabController(
         length: 3, // number of tabs
         child: Scaffold(
           appBar: AppBar(
-            title: Text('User Task Management App'),
+            title: Text('Remote work App(lab mid)'),
             centerTitle: true,
             bottom: TabBar(
               tabs: [
