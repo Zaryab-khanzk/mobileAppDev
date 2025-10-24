@@ -22,10 +22,11 @@ class _LabMidAppState extends State<LabMidApp> {
     return MaterialApp(
       title: 'User Task Manager',
       home: DefaultTabController(
-        length: 3,
+        length: 3, // number of tabs
         child: Scaffold(
           appBar: AppBar(
-            title: Text('User Task Manager'),
+            title: Text('User Task Management App'),
+            centerTitle: true,
             bottom: TabBar(
               tabs: [
                 Tab(text: 'Register User'),
@@ -36,9 +37,10 @@ class _LabMidAppState extends State<LabMidApp> {
           ),
           body: TabBarView(
             children: [
-              // Tab 1: Register User
-              Padding(
-                padding: EdgeInsets.all(16),
+              // Tab 1 - Register User (Purple background)
+              Container(
+                color: const Color.fromARGB(255, 207, 166, 230),
+                padding: EdgeInsets.all(20),
                 child: Column(
                   children: [
                     TextField(
@@ -63,8 +65,10 @@ class _LabMidAppState extends State<LabMidApp> {
                   ],
                 ),
               ),
-              // Tab 2: Add Task
-              Padding(
+
+              // Tab 2 - Add Task (Green background)
+              Container(
+                color: Colors.green[100],
                 padding: EdgeInsets.all(16),
                 child: Column(
                   children: [
@@ -90,8 +94,10 @@ class _LabMidAppState extends State<LabMidApp> {
                   ],
                 ),
               ),
-              // Tab 3: Assign Task
-              Padding(
+
+              // Tab 3 - Assign Task (Blue background)
+              Container(
+                color: Colors.blue[100],
                 padding: EdgeInsets.all(16),
                 child: Column(
                   children: [
@@ -124,8 +130,8 @@ class _LabMidAppState extends State<LabMidApp> {
                       onPressed: () {
                         if (selectedUser != null && selectedTask != null) {
                           setState(() {
-                            assignedTasks
-                                .add('$selectedTask assigned to $selectedUser');
+                            assignedTasks.add(
+                                '$selectedTask assigned to $selectedUser');
                           });
                         }
                       },
